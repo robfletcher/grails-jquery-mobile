@@ -11,6 +11,12 @@
     <body>
 		<div data-role="header" data-position="fixed">
 			<h1><g:message code="default.create.label" args="[entityName]" /></h1>
+			<div data-role="navbar">
+				<ul>
+					<li><a data-icon="home" href="\${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+					<li><g:link data-icon="grid" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+				</ul>
+			</div>
 		</div>
 		<div data-role="content">
 			<g:if test="\${flash.message}">
@@ -41,18 +47,10 @@
 					${renderEditor(p)}
 				</div>
 			<%  }   } %>
-				<div data-role="controlgroup" data-type="horizontal">
-					<g:submitButton name="create" data-icon="check" value="\${message(code: 'default.button.create.label', default: 'Create')}" />
-				</div>
+				<g:submitButton name="create" data-icon="check" value="\${message(code: 'default.button.create.label', default: 'Create')}" />
 			</g:form>
 		</div>
-		<div data-role="footer" data-position="fixed">
-			<div data-role="navbar">
-				<ul>
-					<li><a data-icon="home" href="\${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-					<li><g:link data-icon="grid" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-				</ul>
-			</div>
+		<div data-role="footer">
 		</div>
     </body>
 </html>
