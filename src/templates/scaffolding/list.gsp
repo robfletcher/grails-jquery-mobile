@@ -21,7 +21,7 @@
 			<g:if test="\${flash.message}">
 			<div class="message">\${flash.message}</div>
 			</g:if>
-			<ul data-role="listview" data-split-icon="gear">
+			<ul data-role="listview" data-split-icon="gear" data-filter="true">
 				<g:each in="\${${propertyName}List}" status="i" var="${propertyName}">
 					<li>
 						<g:link action="show" id="\${${propertyName}.id}">\${${propertyName}}</g:link>
