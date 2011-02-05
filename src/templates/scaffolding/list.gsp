@@ -17,7 +17,7 @@
 			</g:if>
 			<ul data-role="listview">
 				<g:each in="\${${propertyName}List}" status="i" var="${propertyName}">
-					<li><g:link action="show" id="\${${propertyName}.id}" data-rel="dialog">\${${propertyName}}</g:link></li>
+					<li><g:link action="show" id="\${${propertyName}.id}">\${${propertyName}}</g:link></li>
 				</g:each>
 			</ol>
 			<fieldset class="pagination">
