@@ -9,6 +9,7 @@ class Book {
 	static hasMany = [authors: Author]
 
     static constraints = {
+		title blank: false
     }
 
 	@Override

@@ -7,6 +7,7 @@ class Author {
 	Date lastUpdated
 
     static constraints = {
+		name blank: false
     }
 
 	@Override
