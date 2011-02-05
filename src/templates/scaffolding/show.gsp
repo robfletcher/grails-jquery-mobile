@@ -8,7 +8,7 @@
         <title><g:message code="default.show.label" args="[entityName]" /></title>
     </head>
     <body>
-		<div data-role="header">
+		<div data-role="header" data-position="fixed">
 			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
 		</div>
 		<div data-role="content">
@@ -47,7 +47,7 @@
 				</g:form>
 			</div>
 		</div>
-		<div data-role="footer">
+		<div data-role="footer" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
 					<li><a data-icon="home" href="\${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
