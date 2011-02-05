@@ -10,4 +10,11 @@ class Book {
 
     static constraints = {
     }
+
+	@Override
+	String toString() {
+		title
+	}
+
+
 }

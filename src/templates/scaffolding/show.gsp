@@ -8,19 +8,13 @@
         <title><g:message code="default.show.label" args="[entityName]" /></title>
     </head>
     <body>
-		<a href="#show-${domainClass.propertyName}" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-        <div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="\${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
-        </div>
-        <div id="show-${domainClass.propertyName}" class="content scaffold-show" role="main">
-            <h1><g:message code="default.show.label" args="[entityName]" /></h1>
-            <g:if test="\${flash.message}">
-            <div class="message">\${flash.message}</div>
-            </g:if>
+		<div data-role="header">
+			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
+		</div>
+		<div data-role="content">
+			<g:if test="\${flash.message}">
+			<div class="message">\${flash.message}</div>
+			</g:if>
 			<dl>
 			<%  excludedProps = Event.allEvents.toList() << 'version'
 				allowedNames = domainClass.persistentProperties*.name << 'id' << 'dateCreated' << 'lastUpdated'
@@ -45,13 +39,22 @@
 				<%  } %>
 			<%  } %>
 			</dl>
-			<g:form>
-				<fieldset class="buttons">
+			<div data-role="controlgroup" data-type="horizontal">
+				<g:form>
 					<g:hiddenField name="id" value="\${${propertyName}?.id}" />
-					<g:actionSubmit class="edit" action="edit" value="\${message(code: 'default.button.edit.label', default: 'Edit')}" />
-					<g:actionSubmit class="delete" action="delete" value="\${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('\${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-				</fieldset>
-			</g:form>
-        </div>
+					<g:actionSubmit data-icon="gear" action="edit" value="\${message(code: 'default.button.edit.label', default: 'Edit')}" />
+					<g:actionSubmit data-icon="delete" action="delete" value="\${message(code: 'default.button.delete.label', default: 'Delete')}" />
+				</g:form>
+			</div>
+		</div>
+		<div data-role="footer">
+			<div data-role="navbar">
+				<ul>
+					<li><a data-icon="home" href="\${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+					<li><g:link data-icon="grid" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+					<li><g:link data-icon="plus" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+				</ul>
+			</div>
+		</div>
     </body>
 </html>

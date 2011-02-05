@@ -2,3 +2,6 @@
 /target
 .idea
 /test/projects/bookstore/target
+/plugin.xml
+*.zip
+devDB.*

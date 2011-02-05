@@ -8,4 +8,11 @@ class Author {
 
     static constraints = {
     }
+
+	@Override
+	String toString() {
+		name
+	}
+
+
 }
