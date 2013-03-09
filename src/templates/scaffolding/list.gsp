@@ -28,7 +28,7 @@
 						<g:link action="edit" id="\${${propertyName}.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
 					</li>
 				</g:each>
-			</ol>
+			</ul>
 			<fieldset class="pagination">
 				<g:paginate total="\${${propertyName}Total}" />
 			</fieldset>
