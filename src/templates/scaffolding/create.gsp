@@ -20,7 +20,7 @@
 		</div>
 		<div data-role="content">
 			<g:if test="\${flash.message}">
-			<div class="message" role="alert">\${flash.message}</div>
+			<div class="message" role="alert"><p>\${flash.message}</p>s</div>
 			</g:if>
 			<g:hasErrors bean="\${${propertyName}}">
 			<div class="errors" role="alert">
