@@ -15,11 +15,11 @@
 					<li><a data-icon="home" href="\${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 					<li><g:link data-icon="plus" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 				</ul>
-			</div>
+			</div> 
 		</div>
 		<div data-role="content">
 			<g:if test="\${flash.message}">
-			<div class="message">\${flash.message}</div>
+			<div class="message"><p>\${flash.message}</p></div>
 			</g:if>
 			<ul data-role="listview" data-split-icon="gear" data-filter="true">
 				<g:each in="\${${propertyName}List}" status="i" var="${propertyName}">
@@ -28,10 +28,12 @@
 						<g:link action="edit" id="\${${propertyName}.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
 					</li>
 				</g:each>
-			</ol>
-			<fieldset class="pagination">
-				<g:paginate total="\${${propertyName}Total}" />
-			</fieldset>
+			</ul>
+			<g:if test="\${showMoreSize > 0}"> 
+				<p>
+					<g:link data-role="button" action="list" params="[max:max]">Show \${showMoreSize} More</g:link> 
+				</p>
+			</g:if> 
 		</div>
 		<div data-role="footer">
 		</div>

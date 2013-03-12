@@ -19,7 +19,7 @@
 		</div>
 		<div data-role="content">
 			<g:if test="\${flash.message}">
-			<div class="message">\${flash.message}</div>
+			<div class="message"><p>\${flash.message}</p>s</div>
 			</g:if>
 			<dl>
 			<%  excludedProps = Event.allEvents.toList() << 'version'
